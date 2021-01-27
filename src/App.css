@@ -40,3 +40,19 @@
     transform: rotate(360deg);
   }
 }
+.box{
+  padding: 20px; 
+  margin: 10px;
+}
+.red{
+  background-color: #f8a1a1;
+}
+.green{
+  background-color: #c8f569;
+}
+.gray{
+  background-color: #8f8b8b;
+}
+.yellow{
+  background-color: #f8e99a;
+}

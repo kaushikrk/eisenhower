@@ -1,7 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
-import { Header, RedTaskBox, GreenTaskBox, YellowTaskBox, GrayTaskBox } from './view/task-box/TaskBox'
-import ReactSortable from 'react-sortablejs'
+import logo from "./logo.svg";
+import "./App.css";
+import {
+  Header,
+  TaskBox,
+  GreenTaskBox,
+  YellowTaskBox,
+  GrayTaskBox,
+} from "./view/task-box/TaskBox";
+import ReactSortable from "react-sortablejs";
 
 function App() {
   return (
@@ -9,25 +15,44 @@ function App() {
       <Header></Header>
       <div className="container">
         <div className="row" style={{ margin: "20px" }}>
-          <RedTaskBox></RedTaskBox>
-          <YellowTaskBox></YellowTaskBox>
+          <TaskBox
+            placeHolder="Things you need to do"
+            classes="box red col"
+            titleClass="lead text-danger"
+            title="Critical - Important"
+            type="red"
+          />
+          <TaskBox
+            placeHolder="Things you can delegate"
+            classes="box yellow col"
+            titleClass="lead text-warning"
+            title="Critical - Not Important"
+            type="yellow"
+          />
         </div>
         <div className="row" style={{ margin: "20px" }}>
-          <GreenTaskBox></GreenTaskBox>
-          <GrayTaskBox></GrayTaskBox>
+          <TaskBox
+            placeHolder="Things you want to do"
+            classes="box green col"
+            titleClass="lead text-success"
+            title="Not Critical - Important"
+            type="green"
+          />
+          <TaskBox
+            placeHolder="Things to avoid"
+            classes="box gray col"
+            titleClass="lead text-gray"
+            title="Not Critical - Not Important"
+            type="gray"
+          />
         </div>
       </div>
-      <footer style={{margin:"20px"}}>
-        <p style={{fontSize:14+"px",textAlign: "center"}}>© Ikshavaku labs</p>
-    </footer>
+      <footer style={{ margin: "20px" }}>
+        <p style={{ fontSize: 14 + "px", textAlign: "center" }}>
+          © Ikshavaku labs
+        </p>
+      </footer>
     </div>
-
   );
-}
-function onEnter(event) {
-  console.log(event);
-  if (event.charCode == 13) {
-        return true;
-  }
 }
 export default App;
